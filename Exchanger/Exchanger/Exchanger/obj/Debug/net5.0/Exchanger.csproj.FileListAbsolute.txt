@@ -1,0 +1,16 @@
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\bin\Debug\net5.0\Exchanger.exe
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\bin\Debug\net5.0\Exchanger.deps.json
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\bin\Debug\net5.0\Exchanger.runtimeconfig.json
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\bin\Debug\net5.0\Exchanger.runtimeconfig.dev.json
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\bin\Debug\net5.0\Exchanger.dll
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\bin\Debug\net5.0\ref\Exchanger.dll
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\bin\Debug\net5.0\Exchanger.pdb
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\obj\Debug\net5.0\Exchanger.csprojAssemblyReference.cache
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\obj\Debug\net5.0\Exchanger.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\obj\Debug\net5.0\Exchanger.AssemblyInfoInputs.cache
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\obj\Debug\net5.0\Exchanger.AssemblyInfo.cs
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\obj\Debug\net5.0\Exchanger.csproj.CoreCompileInputs.cache
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\obj\Debug\net5.0\Exchanger.dll
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\obj\Debug\net5.0\ref\Exchanger.dll
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\obj\Debug\net5.0\Exchanger.pdb
+C:\Users\askmk\Desktop\IT 112\Assignments\Exchanger\Exchanger\Exchanger\obj\Debug\net5.0\Exchanger.genruntimeconfig.cache
