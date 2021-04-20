@@ -32,6 +32,7 @@ namespace Exchanger
 
         public decimal ConvertCurrency(decimal currencyInput, int exchangeChoice)
         {
+            IncrementProperties(currencyInput, exchangeChoice);
             return 0M;//Insert Exchanger.[method name here](currencyInput); Also, how will the ExchangeMonitor know which rate to call?
         }
 
