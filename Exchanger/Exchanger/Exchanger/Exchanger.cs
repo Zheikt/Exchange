@@ -18,13 +18,13 @@
         {
             return 0.79728M * CANAmount;
         }
-        public static decimal CANtoGBP(decimal CANAmount)
-        {
-            return 0.57848M * CANAmount;
-        }
         public static decimal CANtoEUR(decimal CANAmount)
         {
             return 0.66645M * CANAmount;
+        }
+        public static decimal CANtoGBP(decimal CANAmount)
+        {
+            return 0.57848M * CANAmount;
         }
         public static decimal EURtoUSD(decimal EURAmount)
         {
