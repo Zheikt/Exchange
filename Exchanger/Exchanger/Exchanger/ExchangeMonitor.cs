@@ -31,20 +31,11 @@ namespace Exchanger
         }
 
         public decimal ConvertCurrency(decimal currencyInput, int inputTypeChoice, int outputTypeChoice)
-        {   //This probably isn't the best way to do this because it runs all the conversions and then reports it to the array
+        {
             IncrementProperties(currencyInput, inputTypeChoice);
-            if (inputTypeChoice != outputTypeChoice)
-            {
-                decimal[,] conversions = new decimal[,]{ { Exchanger.USDtoCAN(currencyInput), Exchanger.USDtoGBP(currencyInput) , Exchanger.USDtoEUR(currencyInput) },
-                {Exchanger.CANtoUSD(currencyInput), Exchanger.CANtoEUR(currencyInput) , Exchanger.CANtoGBP(currencyInput)  },
-                {Exchanger.EURtoUSD(currencyInput), Exchanger.EURtoCAN(currencyInput) , Exchanger.EURtoGBP(currencyInput)  },
-                {Exchanger.GBPtoUSD(currencyInput), Exchanger.GBPtoCAN(currencyInput) , Exchanger.GBPtoEUR(currencyInput)  } };
-                return conversions[inputTypeChoice - 1, (outputTypeChoice == 4 ? outputTypeChoice - 2: outputTypeChoice  -1)]; //Also, how will the ExchangeMonitor know which rate to call?
-            }
-            else
-            { return currencyInput; }
-        }
+            return 0M;//Insert Exchanger.[method name here](currencyInput); Also, how will the ExchangeMonitor know which rate to call?
 
+        }
         private void IncrementProperties(decimal currencyInput, int exchangeChoice)
         { 
             ExchangeOccurences++;
@@ -52,7 +43,5 @@ namespace Exchanger
                 exchangeChoice == 3 ? Exchanger.EURtoUSD(currencyInput) : 
                 exchangeChoice == 4 ? Exchanger.GBPtoUSD(currencyInput) : currencyInput;
         }
-
-
     }
 }
