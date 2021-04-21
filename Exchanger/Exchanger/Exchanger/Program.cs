@@ -45,9 +45,8 @@ namespace Exchanger
                 } while (!decimal.TryParse(Console.ReadLine(), out exchangeInput));
                 exchangeOutput = monitor.ConvertCurrency(exchangeInput, inputTypeChoice, outputTypeChoice);
                 Console.WriteLine("New total is " + 
-                    (outputTypeChoice == 3 ? "\u20AC" + Math.Round(exchangeOutput, 2, MidpointRounding.AwayFromZero) : 
-                    outputTypeChoice == 4 ? "\u00A3" + Math.Round(exchangeOutput, 2, MidpointRounding.AwayFromZero) :
-                    exchangeOutput.ToString("C")) + 
+                    (outputTypeChoice == 3 ? "\u20AC" + exchangeOutput : 
+                    outputTypeChoice == 4 ? "\u00A3" + exchangeOutput : exchangeOutput.ToString("C")) + 
                     (outputTypeChoice == 1 ? " USD" : outputTypeChoice == 2 ? "CAN" : string.Empty));
                 Console.WriteLine("Perform another exchange? (Y/N)"); //Consider how to account for bad input
             } while (Console.ReadKey().Key == ConsoleKey.Y);
