@@ -30,18 +30,46 @@ namespace Exchanger
             TotalExchanged = 0M;
         }
 
-        public decimal ConvertCurrency(decimal currencyInput, int exchangeChoice)
+        public decimal ConvertCurrency(decimal currencyInput, int inputTypeChoice, int outputTypeChoice)
         {
-            IncrementProperties(currencyInput, exchangeChoice);
-            return 0M;//Insert Exchanger.[method name here](currencyInput); Also, how will the ExchangeMonitor know which rate to call?
-        }
+            IncrementProperties(currencyInput, inputTypeChoice);
+            if (inputTypeChoice != outputTypeChoice)
+            {
+                if (inputTypeChoice == 1)
+                {
+                    return outputTypeChoice == 2 ? Exchanger.USDtoCAN(currencyInput) :
+                        outputTypeChoice == 3 ? Exchanger.USDtoEUR(currencyInput) :
+                        Exchanger.USDtoGBP(currencyInput);
+                }
+                else if (inputTypeChoice == 2)
+                {
+                    return outputTypeChoice == 1 ? Exchanger.CANtoUSD(currencyInput) :
+                        outputTypeChoice == 3 ? Exchanger.CANtoEUR(currencyInput) :
+                        Exchanger.CANtoGBP(currencyInput);
+                }
+                else if (inputTypeChoice == 3)
+                {
+                    return outputTypeChoice == 1 ? Exchanger.EURtoUSD(currencyInput) :
+                        outputTypeChoice == 2 ? Exchanger.EURtoCAN(currencyInput) :
+                        Exchanger.EURtoGBP(currencyInput);
+                }
+                else
+                {
+                    return outputTypeChoice == 1 ? Exchanger.GBPtoUSD(currencyInput) :
+                        outputTypeChoice == 2 ? Exchanger.GBPtoCAN(currencyInput) :
+                        Exchanger.GBPtoEUR(currencyInput);
+                }
+            }
+            else
+            { return currencyInput; }
 
+        }
         private void IncrementProperties(decimal currencyInput, int exchangeChoice)
         { 
-            ExchangeOccurences++; //The comment below should inserted in place of 0 once Exchanger is finished.
-            TotalExchanged += 0; //exchangeChoice >= 1 && <= 3 ? Exchanger.[method name here](currencyInput) :exchangeChoice >= 4 && <= 6 ? Exchanger.[method name here](currencyInput):exchangeChoice >= 7 && <= 9 ? Exchanger.[method name here](currencyInput): Exchanger.[method name here](currencyInput);
+            ExchangeOccurences++;
+            TotalExchanged += exchangeChoice == 2 ? Exchanger.CANtoUSD(currencyInput) :
+                exchangeChoice == 3 ? Exchanger.EURtoUSD(currencyInput) : 
+                exchangeChoice == 4 ? Exchanger.GBPtoUSD(currencyInput) : currencyInput;
         }
-
-
     }
 }
