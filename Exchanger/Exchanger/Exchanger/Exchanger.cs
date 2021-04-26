@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace Exchanger
 {
     static class Exchanger

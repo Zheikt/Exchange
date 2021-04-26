@@ -1,5 +1,16 @@
 ﻿using System;
 
+//Samuel Howsden
+//IT 112 Section 21125
+//Notes: I had fun working with GitHub this project. Had some issues
+    //with slnx.sqlite, but it wasn't anything too terrible. I'm satisfied
+    //with everything here except the loop at the very end where the user
+    //decides if they want to do another exchange. I couldn't figure out a
+    //satisfying way to tell the user when they had bad input without printing
+    //a bunch of text. Also, I don't know if you wanted us to do this header for
+    //this assignment, but I decided to just put of habit.
+//Behaviors Not Implemented: I implemented everything required
+
 namespace Exchanger
 {
     class Program
@@ -7,6 +18,7 @@ namespace Exchanger
         static void Main(string[] args)
         {
             ExchangeMonitor monitor = new ExchangeMonitor();
+            ConsoleKey loopDecision;
             do
             {
                 int inputTypeChoice;
@@ -44,12 +56,17 @@ namespace Exchanger
                     Console.WriteLine("Insert input currency in " + inputCurrencyType);
                 } while (!decimal.TryParse(Console.ReadLine(), out exchangeInput));
                 exchangeOutput = monitor.ConvertCurrency(exchangeInput, inputTypeChoice, outputTypeChoice);
-                Console.WriteLine("New total is " + 
-                    (outputTypeChoice == 3 ? "\u20AC" + exchangeOutput : 
-                    outputTypeChoice == 4 ? "\u00A3" + exchangeOutput : exchangeOutput.ToString("C")) + 
-                    (outputTypeChoice == 1 ? " USD" : outputTypeChoice == 2 ? "CAN" : string.Empty));
-                Console.WriteLine("Perform another exchange? (Y/N)"); //Consider how to account for bad input
-            } while (Console.ReadKey().Key == ConsoleKey.Y);
+                Console.OutputEncoding = System.Text.Encoding.UTF8;
+                Console.WriteLine("New total is " +
+                    (outputTypeChoice == 3 ? "\u20AC" + exchangeOutput :
+                    outputTypeChoice == 4 ? "\u00A3" + exchangeOutput : exchangeOutput.ToString("C")) +
+                    (outputTypeChoice == 1 ? " USD" : outputTypeChoice == 2 ? " CAN" : string.Empty));
+                Console.WriteLine("Perform another exchange? (Y/N)");
+                do
+                {
+                    loopDecision = Console.ReadKey(true).Key;
+                } while (loopDecision != ConsoleKey.Y && loopDecision != ConsoleKey.N);
+            } while (loopDecision == ConsoleKey.Y);
             Console.Clear();
             Console.WriteLine("Total exchanges performed: " + monitor.ExchangeOccurences);
             Console.WriteLine("Total currency exchanged: " + monitor.TotalExchanged.ToString("C") + " USD");

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Exchanger",
+    "\\Exchanger\\Exchanger"
   ],
-  "SelectedNode": "\\Exchanger.sln",
+  "SelectedNode": "\\Exchanger\\Exchanger\\Exchanger.sln",
   "PreviewInSolutionExplorer": false
 }
